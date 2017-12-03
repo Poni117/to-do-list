@@ -1,0 +1,14 @@
+F:\Дима\Java\Program Test\ToDoList\ToDoList\obj\Debug\ToDoList.csprojResolveAssemblyReference.cache
+F:\Дима\Java\Program Test\ToDoList\ToDoList\obj\Debug\ToDoList.csproj.CoreCompileInputs.cache
+F:\Дима\Java\Program Test\ToDoList\ToDoList\bin\Debug\ToDoList.exe.config
+F:\Дима\Java\Program Test\ToDoList\ToDoList\bin\Debug\ToDoList.exe
+F:\Дима\Java\Program Test\ToDoList\ToDoList\bin\Debug\ToDoList.pdb
+F:\Дима\Java\Program Test\ToDoList\ToDoList\obj\Debug\ToDoList.exe
+F:\Дима\Java\Program Test\ToDoList\ToDoList\obj\Debug\ToDoList.pdb
+F:\Дима\Java\Program Test\GitHub\ToDoList\ToDoList\bin\Debug\ToDoList.exe.config
+F:\Дима\Java\Program Test\GitHub\ToDoList\ToDoList\bin\Debug\ToDoList.exe
+F:\Дима\Java\Program Test\GitHub\ToDoList\ToDoList\bin\Debug\ToDoList.pdb
+F:\Дима\Java\Program Test\GitHub\ToDoList\ToDoList\obj\Debug\ToDoList.csprojResolveAssemblyReference.cache
+F:\Дима\Java\Program Test\GitHub\ToDoList\ToDoList\obj\Debug\ToDoList.csproj.CoreCompileInputs.cache
+F:\Дима\Java\Program Test\GitHub\ToDoList\ToDoList\obj\Debug\ToDoList.exe
+F:\Дима\Java\Program Test\GitHub\ToDoList\ToDoList\obj\Debug\ToDoList.pdb
