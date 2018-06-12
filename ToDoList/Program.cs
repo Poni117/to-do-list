@@ -10,22 +10,23 @@ namespace ToDoList
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Сколько задач, господин");
-            int taskNumber = Int32.Parse(Console.ReadLine());
-            Task[] tasks = new Task[taskNumber];
-
-            for (int i = 0; i < taskNumber; i++)
+            List tasks = new List();
+            
+            while (true)
             {
                 Console.WriteLine("Введите задачу");
                 string userAction = Console.ReadLine();
-                tasks[i] = new Task(i, userAction);
+                if(userAction == "stop")
+                {
+                    break;
+                }
+                tasks.Add(userAction);
             }
-
-
-           for (int i = 0; i < tasks.Length - 1; i++)
-           {
-                Console.WriteLine($"{tasks[i].GetId()}. {tasks[i].GetAction()}");
-           }
+            
+            for (int i = 0; i < tasks.GetLength(); i++)
+            {
+                Console.WriteLine($"{i + 1}. {tasks.GetItem(i)}");
+            }
         }
 
     }
