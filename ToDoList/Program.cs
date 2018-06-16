@@ -22,6 +22,8 @@ namespace ToDoList
                 }
                 tasks.Add(userAction);
             }
+            DataService data = new DataService();
+            data.Save(tasks);
             
             for (int i = 0; i < tasks.GetLength(); i++)
             {
