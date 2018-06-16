@@ -10,25 +10,36 @@ namespace ToDoList
     {
         static void Main(string[] args)
         {
-            List tasks = new List();
-            
-            while (true)
+            List tasks = new List(); 
+            Commands commands = new Commands();
+            DataService data = new DataService();
+            while(true)
             {
-                Console.WriteLine("Введите задачу");
-                string userAction = Console.ReadLine();
-                if(userAction == "stop")
+
+                Console.WriteLine("Enter Commands (show list / set list)");
+                string userAnswer = Console.ReadLine();
+                if(userAnswer == "show list")
+                {
+                    commands.ShowList(tasks, data);
+                }
+                else if (userAnswer == "set list")
+                {
+                    commands.SetList(tasks, data);
+                }
+                else if (userAnswer == "exit")
                 {
                     break;
                 }
-                tasks.Add(userAction);
+                else
+                {
+                    Console.WriteLine($"{userAnswer} is not exist");
+                }
             }
-            DataService data = new DataService();
-            data.Save(tasks);
+               
             
-            for (int i = 0; i < tasks.GetLength(); i++)
-            {
-                Console.WriteLine($"{i + 1}. {tasks.GetItem(i)}");
-            }
+
+            
+
         }
 
     }

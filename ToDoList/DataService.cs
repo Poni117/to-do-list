@@ -10,24 +10,30 @@ namespace ToDoList
 {
     class DataService
     {
-       List list = new List();
-       string path = "Tasks.txt";
+       private string _path = "Tasks.txt";
        
        public void Save(List list)
        {
-           int index = 0;
            string txt = "";
-          
-           for (; index < list.GetLength();index++)
+           for (int index = 0; index < list.GetLength(); index++)
            {
-
                 string createTxt = list.GetItem(index);
-                txt = txt + createTxt + "\n";
-                
-                
-                File.WriteAllText(path, txt);
-                    
+                txt += $"{createTxt}\n";
            }
+
+           File.WriteAllText(_path, txt);
        }
+
+        public List Load()
+        {
+            List list = new List();
+            string[] readText = File.ReadAllLines(_path);
+
+            for (int i = 0; i < readText.Length; i++)
+            {
+                list.Add(readText[i]);
+            }
+            return list;
+        }
     }
 }
