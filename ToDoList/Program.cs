@@ -10,7 +10,8 @@ namespace ToDoList
     {
         static void Main(string[] args)
         {
-            List tasks = new List(); 
+            List<Task> tasks = new List<Task>();
+            
             Commands commands = new Commands();
             DataService data = new DataService();
             while(true)

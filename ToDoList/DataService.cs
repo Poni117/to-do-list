@@ -12,26 +12,26 @@ namespace ToDoList
     {
        private string _path = "Tasks.txt";
        
-       public void Save(List list)
+       public void Save(List<Task> list)
        {
            string txt = "";
            for (int index = 0; index < list.GetLength(); index++)
            {
-                string createTxt = list.GetItem(index);
+                Task createTxt = list.GetItem(index);
                 txt += $"{createTxt}\n";
            }
 
            File.WriteAllText(_path, txt);
        }
 
-        public List Load()
+        public List<Task> Load()
         {
-            List list = new List();
+            List<Task> list = new List<Task>();
             string[] readText = File.ReadAllLines(_path);
 
             for (int i = 0; i < readText.Length; i++)
             {
-                list.Add(readText[i]);
+                
             }
             return list;
         }
