@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.IO;
+﻿using System.IO;
 
 
 namespace ToDoList
@@ -12,26 +7,27 @@ namespace ToDoList
     {
        private string _path = "Tasks.txt";
        
-       public void Save(List list)
+       public void Save(List<Task> list)
        {
            string txt = "";
            for (int index = 0; index < list.GetLength(); index++)
            {
-                string createTxt = list.GetItem(index);
-                txt += $"{createTxt}\n";
+                Task task = list.GetItem(index);
+                txt += $"{task.GetDescription()}\n";
            }
 
            File.WriteAllText(_path, txt);
        }
 
-        public List Load()
+        public List<Task> Load()
         {
-            List list = new List();
-            string[] readText = File.ReadAllLines(_path);
+            List<Task> list = new List<Task>();
+            string[] descriptions = File.ReadAllLines(_path);
 
-            for (int i = 0; i < readText.Length; i++)
+            for (int i = 0; i < descriptions.Length; i++)
             {
-                list.Add(readText[i]);
+                Task task = new Task(i, descriptions[i]);
+                list.Add(task);
             }
             return list;
         }

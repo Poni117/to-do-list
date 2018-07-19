@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ToDoList
 {
-    class List
+    class List<T>
     {
         private Item _headItem;
         public List()
@@ -14,7 +14,7 @@ namespace ToDoList
             _headItem = null;
         }
         
-        public void Add(string value)
+        public void Add(T value)
         {
             if(_headItem == null)
             {
@@ -47,7 +47,7 @@ namespace ToDoList
             }
             return lastItem.GetIndex() + 1;
         }
-        public string GetItem(int index)
+        public T GetItem(int index)
         {
             Item nextItem = _headItem;
             for(;nextItem != null; )
@@ -68,10 +68,10 @@ namespace ToDoList
         class Item
         {
             private int _index;
-            private string _value;
+            private T _value;
             private Item _nextItem;
 
-            public Item(int index, string value)
+            public Item(int index, T value)
             {
                 _index = index;
                 _value = value;
@@ -82,7 +82,7 @@ namespace ToDoList
             {
                 return _index;
             }
-            public string GetValue()
+            public T GetValue()
             {
                 return _value;
             }

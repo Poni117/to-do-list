@@ -9,21 +9,21 @@ namespace ToDoList
     class Task
     {
         private int _id;
-        private string _action;
+        private string _description;
 
-        public Task(int id, string action)
+        public Task(int id, string description)
         {
             _id = id;
-            _action = action;
+            _description = description;
         }
 
         public int GetId()
         {
             return _id;
         }
-        public string GetAction()
+        public string GetDescription()
         {
-            return _action;
+            return _description;
         }
     }
 }
