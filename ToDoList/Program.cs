@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ToDoList
 {
@@ -10,20 +6,32 @@ namespace ToDoList
     {
         static void Main(string[] args)
         {
+            List<Task> tasks = new List<Task>();
             
+            Commands commands = new Commands();
+            DataService data = new DataService();
+            while(true)
+            {
 
-            Console.WriteLine("Введите название спика");
-            string nameList = Console.ReadLine();
-            DoList toDoList = new DoList(nameList);
-          
-
-            Console.WriteLine("Введите список задач");
-
-            string[] arrayTasks = toDoList.ProgramTasks();
-            
-            
-           
+                Console.WriteLine("Enter Commands (show list / set list)");
+                string userAnswer = Console.ReadLine();
+                if(userAnswer == "show list")
+                {
+                    commands.ShowList(tasks, data);
+                }
+                else if (userAnswer == "set list")
+                {
+                    commands.SetList(tasks, data);
+                }
+                else if (userAnswer == "exit")
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine($"{userAnswer} is not exist");
+                }
+            }
         }
-        
     }
 }
