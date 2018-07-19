@@ -6,24 +6,24 @@ using System.Threading.Tasks;
 
 namespace ToDoList
 {
-    class Task<T, U>
+    class Task
     {
-        private T _id;
-        private U _action;
+        private int _id;
+        private string _description;
 
-        public Task(T id, U action)
+        public Task(int id, string description)
         {
             _id = id;
-            _action = action;
+            _description = description;
         }
 
-        public T GetId()
+        public int GetId()
         {
             return _id;
         }
-        public U GetAction()
+        public string GetDescription()
         {
-            return _action;
+            return _description;
         }
     }
 }
