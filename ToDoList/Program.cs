@@ -12,14 +12,13 @@ namespace ToDoList
             DataService data = new DataService();
             while(true)
             {
-
                 Console.WriteLine("Enter Commands (show list / set list)");
                 string userAnswer = Console.ReadLine();
-                if(userAnswer == "show list")
+                if(userAnswer == "show")
                 {
                     commands.ShowList(tasks, data);
                 }
-                else if (userAnswer == "set list")
+                else if (userAnswer == "add")
                 {
                     commands.SetList(tasks, data);
                 }

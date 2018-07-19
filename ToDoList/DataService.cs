@@ -21,14 +21,21 @@ namespace ToDoList
 
         public List<Task> Load()
         {
-            List<Task> list = new List<Task>();
+            if (!File.Exists(_path))
+            {
+                return new List<Task>();
+            }
+
+
             string[] descriptions = File.ReadAllLines(_path);
 
+            List<Task> list = new List<Task>();
             for (int i = 0; i < descriptions.Length; i++)
             {
                 Task task = new Task(i, descriptions[i]);
                 list.Add(task);
             }
+
             return list;
         }
     }

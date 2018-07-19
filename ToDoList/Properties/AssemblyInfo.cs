@@ -1,5 +1,4 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // Общие сведения об этой сборке предоставляются следующим набором
@@ -10,11 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("ToDoList")]
-<<<<<<< HEAD
-[assembly: AssemblyCopyright("Copyright ©  2017")]
-=======
 [assembly: AssemblyCopyright("Copyright ©  2018")]
->>>>>>> b7d81902b257b4ac2b584f8b1cdf761f9de14fc6
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -24,11 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Следующий GUID служит для идентификации библиотеки типов, если этот проект будет видимым для COM
-<<<<<<< HEAD
-[assembly: Guid("25d27b0e-82fa-4d40-9e6f-6cf91e2008d6")]
-=======
 [assembly: Guid("065b56ec-1cd7-43ff-8b41-9757ccdcd6dc")]
->>>>>>> b7d81902b257b4ac2b584f8b1cdf761f9de14fc6
 
 // Сведения о версии сборки состоят из следующих четырех значений:
 //
