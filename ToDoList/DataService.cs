@@ -10,6 +10,7 @@ namespace ToDoList
        public void Save(List<Task> list)
        {
            string txt = "";
+           
            for (int index = 0; index < list.GetLength(); index++)
            {
                 Task task = list.GetItem(index);
