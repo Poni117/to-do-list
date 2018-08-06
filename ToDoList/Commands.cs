@@ -21,7 +21,7 @@ namespace ToDoList
             int numberOfTasks = 0;
             while (true)
             {
-                Console.WriteLine("Введите задачу");
+                Console.WriteLine("Введите задачу (stop для завершения)");
                 string userAction = Console.ReadLine();
                 if (userAction == "stop")
                 {
