@@ -6,22 +6,26 @@ namespace ToDoList
     {
         static void Main(string[] args)
         {
-            List<Task> tasks = new List<Task>();
-            
             Commands commands = new Commands();
             DataService data = new DataService();
             while(true)
             {
-                Console.WriteLine("Enter Commands (show  / add list)");
+                Console.WriteLine("Enter Commands (show  / add / delete)");
                 string userAnswer = Console.ReadLine();
                 if(userAnswer == "show")
                 {
-                    commands.ShowList(tasks, data);
+                    commands.ShowTasks(data);
                 }
                 else if (userAnswer == "add")
                 {
-                    commands.SetList(tasks, data);
+                    commands.AddTask(data);
                 }
+
+                else if(userAnswer == "delete")
+                {
+                    commands.RemoveTask(data);
+                }
+               
                 else if (userAnswer == "exit")
                 {
                     break;

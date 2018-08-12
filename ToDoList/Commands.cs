@@ -4,9 +4,9 @@ namespace ToDoList
 {
     class Commands
     {
-        public void ShowList(List<Task> tasks, DataService data)
+        public void ShowTasks(DataService data)
         {
-            tasks = data.Load();
+            List<Task> tasks = data.Load();
 
             for (int i = 0; i < tasks.GetLength(); i++)
             {
@@ -14,12 +14,14 @@ namespace ToDoList
             }
         }
 
-        public void SetList(List<Task> tasks, DataService data)
+        public void AddTask(DataService data)
         {
+            List<Task> tasks = data.Load();
+
             int numberOfTasks = 0;
             while (true)
             {
-                Console.WriteLine("Введите задачу");
+                Console.WriteLine("Введите задачу (stop для завершения)");
                 string userAction = Console.ReadLine();
                 if (userAction == "stop")
                 {
@@ -32,5 +34,18 @@ namespace ToDoList
 
             data.Save(tasks);
         }
+
+       public void RemoveTask(DataService data)
+       {
+            List<Task> tasks = data.Load();
+
+            Console.WriteLine("Введите удаляемую задачу");
+
+            string userAnswer = Console.ReadLine();
+            int removeId = Convert.ToInt32(userAnswer);
+
+            tasks.Remove(removeId);
+            data.Save(tasks);
+       }
     }
 }

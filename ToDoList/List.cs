@@ -24,11 +24,15 @@ namespace ToDoList
             {
                 // 1. last item
                 Item lastItem = _headItem;
-                for(; lastItem.GetNextItem() != null;)
+                
+                for (; lastItem.GetNextItem() != null;)
                 {
                     lastItem = lastItem.GetNextItem();
+
                 }
                 // 2.make  new item be next of last item
+               
+
                 Item newItem = new Item(lastItem.GetIndex() + 1, value);
                 lastItem.SetNextItem(newItem); 
             }
@@ -64,12 +68,28 @@ namespace ToDoList
 
             throw new Exception($"Нет элемента с индексом {index}");
         }
+        public void Remove(int index)
+        {
+            // найти предыдущий для удаляемого объекта    
+            Item prevItem = _headItem;
+            while(prevItem.GetNextItem().GetIndex() != index)
+            {
+                prevItem = prevItem.GetNextItem();
+            }
+
+            // настроить ссылочность
+            prevItem.SetNextItem(
+                prevItem.GetNextItem().GetNextItem()
+            );
+        }
 
         class Item
         {
             private int _index;
             private T _value;
             private Item _nextItem;
+            
+
 
             public Item(int index, T value)
             {
@@ -94,7 +114,7 @@ namespace ToDoList
             {
                 _nextItem = nextItem;
             }
-
+          
         }
     }
 }
