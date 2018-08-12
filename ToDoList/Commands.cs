@@ -8,9 +8,9 @@ namespace ToDoList
         {
             List<Task> tasks = data.Load();
 
-            for (int i = 0; i < tasks.GetLength(); i++)
+            for (tasks.InitLoop(); tasks.IsLoopNext() == true;)
             {
-                Console.WriteLine($"{ tasks.GetItem(i).GetDescription()}");
+                Console.WriteLine($"{tasks.GetItem().GetDescription()}");
             }
         }
 

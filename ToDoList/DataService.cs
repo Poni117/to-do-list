@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 
 
 namespace ToDoList
@@ -11,9 +12,9 @@ namespace ToDoList
        {
            string txt = "";
            
-           for (int index = 0; index < list.GetLength(); index++)
+           for (list.InitLoop(); list.IsLoopNext() == true;)
            {
-                Task task = list.GetItem(index);
+                Task task = list.GetItem();
                 txt += $"{task.GetDescription()}\n";
            }
 

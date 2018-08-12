@@ -9,9 +9,12 @@ namespace ToDoList
     class List<T>
     {
         private Item _headItem;
+        private Item _loopItem;
+
         public List()
         {
             _headItem = null;
+            _loopItem = null;
         }
         
         public void Add(T value)
@@ -25,7 +28,7 @@ namespace ToDoList
                 // 1. last item
                 Item lastItem = _headItem;
                 
-                for (; lastItem.GetNextItem() != null;)
+                while (lastItem.GetNextItem() != null)
                 {
                     lastItem = lastItem.GetNextItem();
 
@@ -45,28 +48,31 @@ namespace ToDoList
                 return 0;
             }
             Item lastItem = _headItem;
-            for (; lastItem.GetNextItem() != null;)
+            while (lastItem.GetNextItem() != null)
             {
                 lastItem = lastItem.GetNextItem();
             }
             return lastItem.GetIndex() + 1;
         }
-        public T GetItem(int index)
+        public T GetItem()
         {
-            Item nextItem = _headItem;
-            for(;nextItem != null; )
-            {
-                if (index != nextItem.GetIndex())
-                {
-                    nextItem = nextItem.GetNextItem();
-                }
-                else
-                {
-                    return nextItem.GetValue();
-                }
-            }
+            _loopItem = _loopItem.GetNextItem();
+              
+            return _loopItem.GetValue();
+        }
 
-            throw new Exception($"Нет элемента с индексом {index}");
+        public void InitLoop()
+        {
+            _loopItem = _headItem;
+        }
+
+        public bool IsLoopNext()
+        {
+            if (_loopItem.GetNextItem() != null)
+            {
+                return true;
+            }
+            return false;
         }
         public void Remove(int index)
         {
