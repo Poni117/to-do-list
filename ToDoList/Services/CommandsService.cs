@@ -1,12 +1,14 @@
 ﻿using System;
+using ToDoList.DataStructure;
+using ToDoList.Domain;
 
-namespace ToDoList
+namespace ToDoList.Services
 {
-    class Commands
+    class CommandsService
     {
         public void ShowTasks(DataService data)
         {
-            List<Task> tasks = data.Load();
+            IList<Task> tasks = data.Load();
 
             for (tasks.InitLoop(); tasks.IsLoopNext() == true;)
             {
@@ -16,7 +18,7 @@ namespace ToDoList
 
         public void AddTask(DataService data)
         {
-            List<Task> tasks = data.Load();
+            IList<Task> tasks = data.Load();
 
             int numberOfTasks = 0;
             while (true)
@@ -37,7 +39,7 @@ namespace ToDoList
 
        public void RemoveTask(DataService data)
        {
-            List<Task> tasks = data.Load();
+            IList<Task> tasks = data.Load();
 
             Console.WriteLine("Введите удаляемую задачу");
 

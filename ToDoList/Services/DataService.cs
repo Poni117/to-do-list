@@ -1,14 +1,16 @@
 ﻿using System;
 using System.IO;
 
+using ToDoList.Domain;
+using ToDoList.DataStructure;
 
-namespace ToDoList
+namespace ToDoList.Services
 {
     class DataService
     {
        private string _path = "Tasks.txt";
        
-       public void Save(List<Task> list)
+       public void Save(IList<Task> list)
        {
            string txt = "";
            
@@ -21,17 +23,17 @@ namespace ToDoList
            File.WriteAllText(_path, txt);
        }
 
-        public List<Task> Load()
+        public IList<Task> Load()
         {
             if (!File.Exists(_path))
             {
-                return new List<Task>();
+                return new LinkedList<Task>();
             }
 
 
             string[] descriptions = File.ReadAllLines(_path);
 
-            List<Task> list = new List<Task>();
+            IList<Task> list = new LinkedList<Task>();
             for (int i = 0; i < descriptions.Length; i++)
             {
                 Task task = new Task(i, descriptions[i]);

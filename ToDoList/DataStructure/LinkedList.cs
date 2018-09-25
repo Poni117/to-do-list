@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ToDoList
+namespace ToDoList.DataStructure
 {
-    class List<T>
+    class LinkedList<T> : IList<T> 
     {
         private Item _headItem;
         private Item _loopItem;
 
-        public List()
+        public LinkedList()
         {
             _headItem = null;
             _loopItem = null;
@@ -94,7 +94,6 @@ namespace ToDoList
             private int _index;
             private T _value;
             private Item _nextItem;
-            
 
 
             public Item(int index, T value)

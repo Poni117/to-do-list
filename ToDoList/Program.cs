@@ -1,4 +1,5 @@
 ﻿using System;
+using ToDoList.Services;
 
 namespace ToDoList
 {
@@ -6,7 +7,7 @@ namespace ToDoList
     {
         static void Main(string[] args)
         {
-            Commands commands = new Commands();
+            CommandsService commands = new CommandsService();
             DataService data = new DataService();
             while(true)
             {
